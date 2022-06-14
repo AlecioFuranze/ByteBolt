@@ -28,7 +28,7 @@ namespace Bolt
 
         public override Segment ToSegment()
         {
-            return new Segment(m_segement.Array, m_segement.Offset, m_position);
+            return new Segment(ToArray());
         }
 
         public void Write(byte value)
