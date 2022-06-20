@@ -115,15 +115,13 @@ namespace Bolt
 
         public void Write(string value)
         {
-            int length = value.Length;
-            if (length > ushort.MaxValue)
-                throw new InvalidOperationException($"String [{value}] is more than {ushort.MaxValue} characters");
+            int left = Length - m_position;
+            byte[] bytes = Encoding.UTF8.GetBytes(value);
+            if (bytes.Length > left)
+                throw new InvalidOperationException($"String [{value}] is too big [{bytes.Length} bytes] for buffer [Left: {left} bytes]");
 
-            Write((ushort)length);
-            for (int c = 0; c < length; c++)
-            {
-                Write(value[c]);
-            }
+            Write((ushort)bytes.Length);
+            Write(bytes);
         }
     }
 }
