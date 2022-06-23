@@ -27,10 +27,5 @@ namespace Bolt
 
         public abstract byte[] ToArray();
         public abstract Segment ToSegment();
-
-        public Segment Cut(int position, int lenght)
-        {
-            return new Segment(m_segement.Array, m_segement.GetRelativePosition(position), lenght);
-        }
     }
 }
