@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Runtime.InteropServices;
 
 namespace Bolt
 {
@@ -16,18 +15,6 @@ namespace Bolt
         {
             this.m_segement = segment;
             this.m_position = 0;
-        }
-
-        public override byte[] ToArray()
-        {
-            byte[] data = new byte[m_position];
-            m_segement.CopyTo(data, 0, m_position);
-            return data;
-        }
-
-        public override Segment ToSegment()
-        {
-            return new Segment(ToArray());
         }
 
         public byte Peek()

@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace Bolt
+﻿namespace Bolt
 {
     public abstract class Buffer
     {
@@ -24,8 +22,5 @@ namespace Bolt
         {
             m_position = 0;
         }
-
-        public abstract byte[] ToArray();
-        public abstract Segment ToSegment();
     }
 }

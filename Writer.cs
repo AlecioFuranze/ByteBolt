@@ -19,14 +19,14 @@ namespace Bolt
             this.m_position = 0;
         }
 
-        public override byte[] ToArray()
+        public byte[] ToArray()
         {
-            byte[] data = new byte[m_segement.Count];
-            m_segement.CopyTo(data);
+            byte[] data = new byte[m_position];
+            m_segement.CopyTo(data, 0, m_position);
             return data;
         }
 
-        public override Segment ToSegment()
+        public Segment ToSegment()
         {
             return new Segment(ToArray());
         }
@@ -115,11 +115,7 @@ namespace Bolt
 
         public void Write(string value)
         {
-            int left = Length - m_position;
             byte[] bytes = Encoding.UTF8.GetBytes(value);
-            if (bytes.Length > left)
-                throw new InvalidOperationException($"String [{value}] is too big [{bytes.Length} bytes] for buffer [Left: {left} bytes]");
-
             Write((ushort)bytes.Length);
             Write(bytes);
         }
