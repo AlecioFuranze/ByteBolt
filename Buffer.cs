@@ -22,5 +22,11 @@
         {
             m_position = 0;
         }
+
+        // use this only if you know what you're doing
+        public void Seek(int position)
+        {
+            m_position = position;
+        }
     }
 }

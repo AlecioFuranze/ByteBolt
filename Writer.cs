@@ -38,12 +38,6 @@ namespace Bolt
             /*return new Segment(ToArray());*/
         }
 
-        // use this only if you know what you're doing
-        public void Seek(int position)
-        {
-            m_position = position;
-        }
-
         public void Write(byte value)
         {
             m_segement[m_position] = value;
