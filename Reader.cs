@@ -17,6 +17,12 @@ namespace Bolt
             this.m_position = 0;
         }
 
+        public Reader(ref Reader other)
+        {
+            this.m_segement = other.m_segement;
+            this.m_position = other.m_position;
+        }
+
         public byte Peek()
         {
             return m_segement[m_position];
