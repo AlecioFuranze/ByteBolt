@@ -3,7 +3,7 @@
 namespace Bolt
 {
     // delimits a part of a byte array that already exists in memory
-    //          when using Net.Core ArraySegment isn't implemented
+    //          ArraySegment isn't implemented in all .Net libraries
     public readonly struct Segment
     {
         public Segment(byte[] array)
