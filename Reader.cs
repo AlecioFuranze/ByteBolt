@@ -35,18 +35,18 @@ namespace Bolt
             return b;
         }
 
-        public byte[] Peek(int lenght)
+        public byte[] Read(int lenght)
         {
             byte[] bytes = new byte[lenght];
             Array.Copy(m_segement.Array, m_segement.GetRelativePosition(m_position), bytes, 0, lenght);
+            m_position += lenght;
             return bytes;
         }
 
-        public byte[] Read(int lenght)
+        public Segment Peek(int lenght)
         {
-            byte[] bytes = Peek(lenght);
-            m_position += lenght;
-            return bytes;
+            int offset = m_segement.GetRelativePosition(m_position);
+            return new Segment(m_segement.Array, offset, lenght);
         }
 
         public Segment ReadSegment(int lenght)
