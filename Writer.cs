@@ -19,10 +19,16 @@ namespace Bolt
             this.m_position = 0;
         }
 
-        public Writer(ref Writer other)
+        public Writer(Writer other)
         {
             this.m_segement = other.m_segement;
             this.m_position = other.m_position;
+        }
+
+        public Writer(ref Reader other, int lenght)
+        {
+            this.m_segement = other.ReadSegment(lenght);
+            this.m_position = 0;
         }
 
         public byte[] ToArray()

@@ -17,10 +17,16 @@ namespace Bolt
             this.m_position = 0;
         }
 
-        public Reader(ref Reader other)
+        public Reader(Reader other)
         {
             this.m_segement = other.m_segement;
             this.m_position = other.m_position;
+        }
+
+        public Reader(ref Writer other)
+        {
+            this.m_segement = other.ToSegment();
+            this.m_position = 0;
         }
 
         public byte Peek()
