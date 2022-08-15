@@ -9,7 +9,7 @@ namespace Bolt
     {
         public Writer()
         {
-            this.m_segement = new Segment(new byte[MaxLength]);
+            this.m_segement = new Segment(new byte[Default]);
             this.m_position = 0;
         }
 

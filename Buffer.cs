@@ -2,7 +2,7 @@
 {
     public abstract class Buffer
     {
-        public const int MaxLength = 1200;
+        public const int Default = 1200;
 
         protected int m_position;
         protected Segment m_segement;
