@@ -15,7 +15,34 @@
 
 ## Usage
 ```csharp
+// dotnet 6 / console app
 using System;
+using Bolt;
+
+// crete
+var w = new ByteWrite();
+w.Write(1024); // int
+w.Write(10.24f); // float
+
+// get all bytes in added list
+var buffer = w.GetBuffer();
+
+// read
+// create new 
+var r = ByteRead();
+
+// add buffer
+r.AddBuffer(buffer);
+
+// or 
+r.ConcatBuffer(buffer);
+
+// read data
+var _int = r.ReadInt(); // output: 1024
+var _float = r.ReadFloat(); // output: 10.24
+
+// restore Reader
+r.Release();
 ```
 
 ### Write
