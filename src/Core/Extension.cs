@@ -20,7 +20,7 @@ namespace ByteBolt.Core
                 // reading
                 Generic<byte>.SetRead((ref Reader reader) =>
                 {
-                    return reader.Read();
+                    return reader.ReadByte();
                 });
                 Generic<bool>.SetRead((ref Reader reader) =>
                 {
