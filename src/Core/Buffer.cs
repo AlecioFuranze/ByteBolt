@@ -1,7 +1,7 @@
 ﻿using System;
-using ByteBolt.Core;
+using Buffer = ByteBolt.Core.Buffer;
 
-namespace ByteBolt
+namespace ByteBolt.Core
 {
     public abstract class Buffer
     {

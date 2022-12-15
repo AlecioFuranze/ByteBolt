@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using ByteBolt.Core;
+using Buffer = ByteBolt.Core.Buffer;
 
 namespace ByteBolt
 {

@@ -2,6 +2,7 @@
 using System.Text;
 using System.Runtime.InteropServices;
 using ByteBolt.Core;
+using Buffer = ByteBolt.Core.Buffer;
 
 namespace ByteBolt
 {
