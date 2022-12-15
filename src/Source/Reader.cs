@@ -7,6 +7,8 @@ namespace ByteBolt
 {
     public class Reader : Buffer
     {
+        #region Bulder
+
         public Reader(byte[] bytes)
         {
             this.m_segement = new Segment(bytes);
@@ -19,36 +21,19 @@ namespace ByteBolt
             this.m_position = 0;
         }
 
-        public Reader(Reader other)
-        {
-            this.m_segement = other.m_segement;
-            this.m_position = other.m_position;
-        }
-
         public Reader(ref Writer other)
         {
             this.m_segement = other.ToSegment();
             this.m_position = 0;
         }
 
+        #endregion
+
+        #region Info
+
         public byte Peek()
         {
             return m_segement[m_position];
-        }
-
-        public byte Read()
-        {
-            byte b = Peek();
-            m_position++;
-            return b;
-        }
-
-        public byte[] Read(int lenght)
-        {
-            byte[] bytes = new byte[lenght];
-            Array.Copy(m_segement.Array, m_segement.GetRelativePosition(m_position), bytes, 0, lenght);
-            m_position += lenght;
-            return bytes;
         }
 
         public Segment Peek(int lenght)
@@ -64,14 +49,27 @@ namespace ByteBolt
             return new Segment(m_segement.Array, offset, lenght);
         }
 
-        /*public sbyte ReadSByte()
+        #endregion
+
+        public byte ReadByte()
         {
-            return Convert.ToSByte(Read());
-        }*/
+            byte b = Peek();
+            m_position++;
+            return b;
+        }
+
+        public byte[] ReadBytes()
+        {
+            int lenght = ReadInt();
+            byte[] bytes = new byte[lenght];
+            Array.Copy(m_segement.Array, m_segement.GetRelativePosition(m_position), bytes, 0, lenght);
+            m_position += lenght;
+            return bytes;
+        }        
 
         public bool ReadBool()
         {
-            return Read() > 0;
+            return ReadByte() > 0;
         }
 
         public char ReadChar()
@@ -111,7 +109,7 @@ namespace ByteBolt
         public long ReadLong()
         {
             int index = m_position;
-            m_position += sizeof(char);
+            m_position += sizeof(long);
             return BitConverter.ToInt64(m_segement.Array, m_segement.GetRelativePosition(index));
         }
 
@@ -135,16 +133,26 @@ namespace ByteBolt
             m_position += sizeof(double);
             return BitConverter.ToDouble(m_segement.Array, m_segement.GetRelativePosition(index));
         }
-
-        /*public decimal ReadDecimal()
-        {
-            return;
-        }*/
         
-        public string ReadString()
+        public string ReadString(Encode encode = Encode.UTF8)
         {
-            int length = ReadUShort();
-            return Encoding.UTF8.GetString(Read(length));
+            byte[] value = ReadBytes();
+            
+            switch (encode)
+            {                
+                case Encode.ASCII:
+                    return Encoding.ASCII.GetString(value);
+                case Encode.UTF7:
+                    return Encoding.UTF7.GetString(value);
+                case Encode.UTF8:
+                    return Encoding.UTF8.GetString(value);
+                case Encode.UTF32:
+                    return Encoding.UTF32.GetString(value);
+                case Encode.UNICODE:
+                    return Encoding.Unicode.GetString(value);
+                default:
+                    return string.Empty;
+            }
         }
     }
 }
