@@ -1,4 +1,7 @@
-﻿namespace ByteBolt
+﻿using System;
+using ByteBolt.Core;
+
+namespace ByteBolt
 {
     public abstract class Buffer
     {

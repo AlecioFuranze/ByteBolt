@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Runtime.InteropServices;
+using ByteBolt.Core;
 
 namespace ByteBolt
 {
