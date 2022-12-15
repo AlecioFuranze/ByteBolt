@@ -53,13 +53,12 @@ namespace ByteBolt
 
         public void Write(byte value)
         {
-            m_segement[m_position] = value;
-            m_position++;
+            WriteLine(new byte[1] { value });
         }        
 
         public void Write(bool value)
         {
-            WriteLine(value ? 1 : 0);
+            Write((byte)(value ? 1 : 0));
         }
 
         public void Write(char value)
@@ -140,7 +139,7 @@ namespace ByteBolt
         {
             if (values == null || values.Length <= 0) return;
 
-            WriteLine((int) values.Length);
+            Write((int) values.Length);
             WriteLine(values);
         }
 
