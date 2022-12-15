@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Bolt
+namespace ByteBolt
 {
     public class Reader : Buffer
     {

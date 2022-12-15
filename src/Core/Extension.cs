@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bolt
+namespace ByteBolt.Core
 {
     public static class Extension
     {

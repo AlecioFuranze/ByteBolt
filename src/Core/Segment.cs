@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bolt
+namespace ByteBolt.Core
 {
     // delimits a part of a byte array that already exists in memory
     //          ArraySegment isn't implemented in all .Net libraries

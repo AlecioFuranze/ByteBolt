@@ -1,4 +1,4 @@
-﻿namespace Bolt
+﻿namespace ByteBolt
 {
     public abstract class Buffer
     {

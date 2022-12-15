@@ -2,7 +2,7 @@
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace Bolt
+namespace ByteBolt
 {
     // creates a byte array, but he frist four byes are for header information
     public class Writer : Buffer
