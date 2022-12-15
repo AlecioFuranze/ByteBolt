@@ -13,13 +13,6 @@ public class WriterTest
         var w = new Writer();
         AddValueInWriter(ref w);
     }
-
-    [Fact]
-    public void Write()
-    {
-        var w = new Writer();
-        AddValueInWriter(ref w);
-    }
     
     public static void AddValueInWriter(ref Writer w)
     {
