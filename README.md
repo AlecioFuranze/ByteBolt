@@ -47,9 +47,11 @@ string;
   using ByteBolt.Core;
   
   // create instance
-  Writer w = new Writer();           // default;
-  _ = new Writer(int <length>);      // set default Segment length
-  _ = bew Writer(Segment <segment>); // set existent Segment
+  Writer w = new Writer();                  // default;
+                                            /*
+  Writer w = new Writer(int <length>);      // set default Segment length
+  Writer w = bew Writer(Segment <segment>); // set existent Segment
+                                            */
   
   // write
   w.Write("int, string, byte[], char, float, double, ...");
