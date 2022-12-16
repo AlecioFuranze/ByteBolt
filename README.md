@@ -7,10 +7,10 @@
 
 #### Namespace
 ```csharp
-using ByteBolt; // api
+using ByteBolt; // default: Writer, Reader
 ```
 ```csharp
-using ByteBolt.Core; // internal
+using ByteBolt.Core; // internal usage
 ```
 
 #### Accepted Types
