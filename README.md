@@ -44,7 +44,7 @@ string;
   ```csharp
   using System;
   using ByteBolt;
-  using ByteBolt.Core;
+  using ByteBolt.Core;                      // import to use: Encode, Segment
   
   // create instance
   Writer w = new Writer();                  // default;
@@ -54,6 +54,7 @@ string;
                                             */
   
   // write
+  w.Write("ByteBolt", Encode.UTF8); // ASCII, UTF7, UTF8, UTF32, UNICODE
   w.Write("int, string, byte[], char, float, double, ...");
   
   // encoded result
