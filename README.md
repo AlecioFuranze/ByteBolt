@@ -64,12 +64,12 @@ string;
  byte[] encoded = writer.ToArray();
  
  // Reader instance
- Reader reader = new Reader(encoded) // accept: byte[], Writer, ... 
+ Reader reader = new Reader(encoded); // accept: byte[], Writer, ... 
  
  // reader data
- byte myByte = reader.ReadByte();       // output: 255
- int myInt = reader.ReadInt();          // output: 1024
- byte[] myBytes = reader.ReadBytes();   // output: [ 1, 2, 3, 4 ]
- string myString = reader.ReadString(); // output: ByteBolt
+ byte     myByte    = reader.ReadByte();   // output: 255
+ int      myInt     = reader.ReadInt();    // output: 1024
+ byte[]   myBytes   = reader.ReadBytes();  // output: [ 1, 2, 3, 4 ]
+ string   myString  = reader.ReadString(); // output: ByteBolt
  
 ```
