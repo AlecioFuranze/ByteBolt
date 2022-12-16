@@ -1,65 +1,51 @@
 # ByteBolt
 
-<br>
+#### C# High-level library for byte manipulation, and fast encode/decode of datas
 
-> ### C# High-level library for byte manipulation
-
-<br>
-
-## Abount
-
-### This lib has the function of facilitating the usability and manipulation of bytes, whether to encode and decode or use it as a base to create your own data type, ex: zip, png, mp4
-
-
-<br>
 
 ## Usage
+
+#### Namespace
 ```csharp
-// dotnet 6 / console app
-using System;
-using Bolt;
-
-// crete
-var w = new ByteWrite();
-w.Write(1024); // int
-w.Write(10.24f); // float
-
-// get all bytes in added list
-var buffer = w.GetBuffer();
-
-// read
-// create new 
-var r = ByteRead();
-
-// add buffer
-r.AddBuffer(buffer);
-
-// or 
-r.ConcatBuffer(buffer);
-
-// read data
-var _int = r.ReadInt(); // output: 1024
-var _float = r.ReadFloat(); // output: 10.24
-
-// restore Reader
-r.Release();
+using ByteBolt; // api
+```
+```csharp
+using ByteBolt.Core; // internal
 ```
 
-### Write
-```csharp
-using System;
+#### Accepted Types
+```
+// byte
+byte;
+byte[];
+
+// int | Int32
+int;
+uint;
+
+// short | Int16
+short;
+ushort;
+
+// long | Int64
+long;
+ulong;
+
+// arithmetic
+float;
+double;
+
+// other
+char;
+string;
 ```
 
-### Read
+- ### Writer
+  ```csharp
+  ```
+- ### Reader
+    ```csharp
+    ```
+#### Sample
 ```csharp
-using System;
-```
-## Buffer
-```csharp
-using System;
-```
-
-## Seek
-```csharp
-using System;
 ```
