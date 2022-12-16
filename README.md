@@ -63,6 +63,33 @@ string;
   ```
 - ### Reader
     ```csharp
+    using System;
+    using ByteBolt;
+    
+    // create instance
+    Reader r = new Reader(ref w);             // default;
+                                              /*
+    Reader r = new Reader(byte[] <buffer>);   // set  Buffer
+    Reader r = new Reader(Writer <writer>);   // set  Writer
+    Reader r = bew Reader(Segment <segment>); // set  Segment
+                                              */
+    
+    // reader
+    byte myByte       = r.ReadByte();
+    string myString   = r.ReadString();
+    string myStrName  = r.ReadString(Encode.UTF8); // Reader string with (Encode), the default is UTF8.
+    
+    // other
+    byte peekIndex    = r.Peek();   // peek current reading index
+    byte peekMyIndex  = r.Peek(7);  // peek at custom segment index
+    
+    int current = r.Current; // get the current reading index
+    int length  = r.Length;  // get the reader Segment length
+    
+    // Seek: move the current reading Segment position:
+    // Syntax: Reader.Seek(int <position>);    
+    // WARNING (use this only if you know what you're doing)
+    r.Seek(current);
     ```
 #### Sample
 ```csharp
