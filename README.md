@@ -14,33 +14,18 @@ using ByteBolt.Core; // internal
 ```
 
 #### Accepted Types
-```
-// byte
-byte;
-byte[];
 
-// int | Int32
-int;
-uint;
-
-// short | Int16
-short;
-ushort;
-
-// long | Int64
-long;
-ulong;
-
-// arithmetic
-float;
-double;
-
-// other
-char;
-string;
-```
+| TYPE          | VALUE        |
+| ---           | ---          |
+| Byte          | byte, byte[] |
+| Char          | char, string |
+| Int16         | short, ushort|
+| Int32         | int, uint    |
+| Int64         | long, ulong  |
+| Floating-Point| float, double|
 
 - ### Writer
+
   ```csharp
   using System;                             
   using ByteBolt;                           // import to use: Writer, Reader
