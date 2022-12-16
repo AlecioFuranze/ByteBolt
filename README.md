@@ -57,7 +57,7 @@ string;
   w.Write("int, string, byte[], char, float, double, ...");
   
   // encoded result
-  byte[] array = w.ToArray();
+  byte[]  array   = w.ToArray();
   Segment segment = w.ToSegment(); 
   ```
 - ### Reader
