@@ -109,7 +109,7 @@ namespace Bolt
         public long ReadLong()
         {
             int index = m_position;
-            m_position += sizeof(char);
+            m_position += sizeof(long);
             return BitConverter.ToInt64(m_segement.Array, m_segement.GetRelativePosition(index));
         }
 
