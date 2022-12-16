@@ -51,12 +51,12 @@ string;
   _ = new Writer(int <length>);      // set default Segment length
   _ = bew Writer(Segment <segment>); // set existent Segment
   
-  // get result
-  byte[] array = w.ToArray();
-  Segment segment = w.ToSegment();
-  
   // write
-  w.Write(<int, string, byte[], char, float, double, ...>);
+  w.Write("int, string, byte[], char, float, double, ...");
+  
+  // encoded result
+  byte[] array = w.ToArray();
+  Segment segment = w.ToSegment(); 
   ```
 - ### Reader
     ```csharp
