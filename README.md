@@ -42,8 +42,8 @@ string;
 
 - ### Writer
   ```csharp
-  using System;
-  using ByteBolt;
+  using System;                             
+  using ByteBolt;                           // import to use: Writer, Reader
   using ByteBolt.Core;                      // import to use: Encode, Segment
   
   // create instance
